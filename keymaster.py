@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     try:
         print("Uploading key " + args.filename)
-        with open(args.filename) as key_file:
+        with open(args.filename[0]) as key_file:
             public_key = key_file.read()
             key_req = requests.post(key_upload_url,
                                     data={'public_key': public_key})
